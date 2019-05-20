@@ -3,13 +3,14 @@ import { ContainerTemplate, PostTemplate } from './template.js'
 import { PostModel } from './model.js'
 
 const tumblrClient = new Tumblr({
-  blogName: 'karicca-art',
+  blogName: 'karicca',
   apiKey: 'rPSt5BHEMqYFbAR6UVccYzEiLXWw6CSE92RTWbz9QOUim6W7TQ'
 })
 
 const getPhotoPosts = async () => {
   const response = await tumblrClient.fetchPosts({
     type: 'photo',
+    tag: 'portfolio',
     limit: 20
   })
   const data = await response.json()
