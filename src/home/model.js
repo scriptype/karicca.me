@@ -7,7 +7,7 @@ export class PostModel {
         return {
           type: post.type,
           permalink: post.post_url,
-          title: toDOM(post.caption).innerText,
+          title: post.caption ? toDOM(post.caption).innerText : '',
           highResThumbnailUrl: post.photos[0].original_size.url
         }
     }
