@@ -23,8 +23,12 @@
     .post-item:nth-child(3n) {
         grid-column: span 2;
     }
-    .post-item:last-child {
+}
+
+@media (max-width: 768px) {
+    .post-item:nth-child(3n) {
         grid-column: span 2;
+        grid-row: span 2;
     }
 }
 
