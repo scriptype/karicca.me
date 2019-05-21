@@ -4,18 +4,25 @@ export default class Tumblr {
     this.blogName = options.blogName
   }
 
-  getBaseUrl(blogName) {
-    return `https://api.tumblr.com/v2/blog/${blogName}.tumblr.com/posts`
+  getBaseUrl(blogName, endpoint) {
+    return `https://api.tumblr.com/v2/blog/${blogName}.tumblr.com/${endpoint}`
   }
 
-  fetchPosts({ type, limit, blogName, tag }) {
-    const baseUrl = this.getBaseUrl(blogName || this.blogName)
+  getPosts({ type, limit, blogName, tag }) {
+    const baseUrl = this.getBaseUrl(blogName || this.blogName, 'posts')
     const params = [
       `limit=${limit}`,
       `api_key=${this.apiKey}`
     ]
     if (type) params.push(`type=${type}`)
     if (tag) params.push(`tag=${tag}`)
+    const requestUrl = [ baseUrl, params.join('&') ].join('?')
+    return fetch(requestUrl)
+  }
+
+  getInfo({ blogName } = {}) {
+    const baseUrl = this.getBaseUrl(blogName || this.blogName, 'info')
+    const params = [ `api_key=${this.apiKey}` ]
     const requestUrl = [ baseUrl, params.join('&') ].join('?')
     return fetch(requestUrl)
   }

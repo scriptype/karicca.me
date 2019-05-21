@@ -1,3 +1,5 @@
-import Home from './home/index.js'
+import Info from './info/index.js'
+import Posts from './posts/index.js'
 
-Home.init()
+Info.init()
+Posts.init()

@@ -1,6 +1,4 @@
 .posts-container {
-    max-width: 1000px;
-    margin: 50px auto 150px;
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
