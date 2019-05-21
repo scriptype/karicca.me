@@ -1,25 +1,33 @@
 .info-container {
     padding: 10vw 0 25vw;
+    text-align: center;
+}
+
+.info__title {
+    font: normal bold 10vw/1 "Libre Baskerville", serif;
+}
+
+.info__title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.info__description {
+    max-width: 640px;
+    margin: 25px auto 0;
+    font: normal 5vw/1.5 helvetica, sans-serif;
 }
 
 @media (min-width: 480px) {
     .info-container {
         padding: 50px 0 150px;
     }
-}
 
-.info__title {
-    font: normal bold 10vw/1 "Libre Baskerville", serif;
-    text-align: center;
-}
-
-@media (min-width: 480px) {
     .info__title {
         font-size: 5em;
     }
-}
 
-.info__title a {
-    text-decoration: none;
-    color: inherit;
+    .info__description {
+        font-size: 1.2em;
+    }
 }
