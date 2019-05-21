@@ -15,3 +15,11 @@ export function PostTemplate(post) {
       `
   }
 }
+
+export function LoadingIndicatorTemplate() {
+  return `
+    <div class="loading-container">
+      <span class="loading-indicator">Loading</span>
+    </div>
+  `
+}

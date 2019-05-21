@@ -8,7 +8,7 @@ export default class Tumblr {
     return `https://api.tumblr.com/v2/blog/${blogName}.tumblr.com/${endpoint}`
   }
 
-  getPosts({ type, limit, blogName, tag }) {
+  getPosts({ type, limit, offset, blogName, tag }) {
     const baseUrl = this.getBaseUrl(blogName || this.blogName, 'posts')
     const params = [
       `limit=${limit}`,
@@ -16,6 +16,7 @@ export default class Tumblr {
     ]
     if (type) params.push(`type=${type}`)
     if (tag) params.push(`tag=${tag}`)
+    if (offset) params.push(`offset=${offset}`)
     const requestUrl = [ baseUrl, params.join('&') ].join('?')
     return fetch(requestUrl)
   }
