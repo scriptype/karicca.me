@@ -1,11 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:700&display=swap');
-
 .info-container {
-    padding: 25px 0 150px;
+    padding: 10vw 0 25vw;
+}
+
+@media (min-width: 480px) {
+    .info-container {
+        padding: 50px 0 150px;
+    }
 }
 
 .info__title {
-    font-size: 5em;
-    font-family: "Libre Baskerville", serif;
+    font: normal bold 10vw/1 "Libre Baskerville", serif;
     text-align: center;
+}
+
+@media (min-width: 480px) {
+    .info__title {
+        font-size: 5em;
+    }
+}
+
+.info__title a {
+    text-decoration: none;
+    color: inherit;
 }

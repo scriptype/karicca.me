@@ -1,0 +1,9 @@
+@import "reset.css";
+@import "fonts.css";
+@import "../info/style.css";
+@import "../posts/style.css";
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto 150px;
+}
