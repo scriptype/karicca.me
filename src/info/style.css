@@ -1,2 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:700&display=swap');
+
 .info-container {
+    padding: 25px 0 150px;
+}
+
+.info__title {
+    font-size: 5em;
+    font-family: "Libre Baskerville", serif;
+    text-align: center;
 }

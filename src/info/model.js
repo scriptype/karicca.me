@@ -1,5 +1,9 @@
 export class InfoModel {
   constructor(info) {
-    Object.assign(this, info)
+    return {
+      title: info.title,
+      description: info.description,
+      tumblrBlogUrl: info.url
+    }
   }
 }

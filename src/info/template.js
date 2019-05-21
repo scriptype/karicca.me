@@ -1,5 +1,5 @@
 export function InfoTemplate(info) {
   return `
-    <pre>${JSON.stringify(info, null, 2)}</pre>
+    <h1 class="info__title">${info.title}</h1>
   `
 }
