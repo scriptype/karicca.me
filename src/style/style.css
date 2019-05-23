@@ -3,6 +3,10 @@
 @import "../info/style.css";
 @import "../posts/style.css";
 
+* {
+    box-sizing: border-box;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto 150px;
