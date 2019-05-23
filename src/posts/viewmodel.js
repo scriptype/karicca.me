@@ -17,10 +17,7 @@ const state = {
 const treshold = 100
 let counter = 0
 const onScroll = (event) => {
-  const scroll = (
-    document.documentElement.scrollTop ||
-    document.body.scrollTop
-  )
+  const scroll = document.documentElement.scrollTop || document.body.scrollTop
   const { scrollHeight, windowHeight } = state
   const { page } = model
   const scrolledEnough = scroll >= scrollHeight - windowHeight
