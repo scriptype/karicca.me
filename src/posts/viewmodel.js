@@ -20,9 +20,9 @@ const onScroll = (event) => {
   const scroll = document.documentElement.scrollTop || document.body.scrollTop
   const { scrollHeight, windowHeight } = state
   const { page } = model
-  const scrolledEnough = scroll >= scrollHeight - windowHeight
+  const scrolledEnough = scroll >= scrollHeight - windowHeight * 2
   if (!page.loading && !page.reachedEnd && scrolledEnough) {
-    renderNextPage()
+    renderNextPage().then(onResize)
   }
   if (!counter++ || (counter % treshold) === 0) {
     onResize()
