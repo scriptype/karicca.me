@@ -1,8 +1,8 @@
-export function ContainerTemplate(posts) {
-  return posts.map(PostTemplate).join('\n\n')
+export function ContainerView(posts) {
+  return posts.map(PostView).join('\n\n')
 }
 
-export function PostTemplate(post) {
+export function PostView(post) {
   switch (post.type) {
     case 'photo':
       return `
@@ -16,7 +16,7 @@ export function PostTemplate(post) {
   }
 }
 
-export function LoadingIndicatorTemplate() {
+export function LoadingIndicatorView() {
   return `
     <div class="loading-container">
       <span class="loading-indicator">Loading</span>

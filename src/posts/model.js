@@ -1,7 +1,20 @@
+import Tumblr from '../tumblr.js'
+import config from '../config.js'
 import { toDOM } from '../utils.js'
 
+const tumblrClient = new Tumblr(config.tumblr)
+
 export class PostModel {
-  constructor(post) {
+  constructor(options) {
+    this.page = {
+      loading: false,
+      reachedEnd: false,
+      current: 0,
+      size: options.pageSize
+    }
+  }
+
+  static serialize(post) {
     switch (post.type) {
       case 'photo':
         return {
@@ -11,5 +24,27 @@ export class PostModel {
           highResThumbnailUrl: post.photos[0].original_size.url
         }
     }
+  }
+
+  async fetch() {
+    this.page.loading = true
+    const response = await tumblrClient.getPosts({
+      type: 'photo',
+      tag: 'portfolio',
+      limit: this.page.size,
+      offset: this.page.current * this.page.size
+    })
+    const data = await response.json()
+    const posts = data.response.posts
+    if (posts.length < this.page.size) {
+      this.page.reachedEnd = true
+    }
+    this.page.loading = false
+    return data.response.posts
+  }
+
+  async nextPage() {
+    this.page.current++
+    return await this.fetch()
   }
 }

@@ -1,9 +1,25 @@
+import Tumblr from '../tumblr.js'
+import config from '../config.js'
+
+const tumblrClient = new Tumblr(config.tumblr)
+
 export class InfoModel {
-  constructor(info) {
+  constructor() {
+    this.data = {}
+  }
+
+  serialize() {
     return {
-      title: info.title,
-      description: info.description,
-      tumblrBlogUrl: info.url
+      title: this.data.title,
+      description: this.data.description,
+      tumblrBlogUrl: this.data.url
     }
+  }
+
+  async fetch() {
+    const response = await tumblrClient.getInfo()
+    const data = await response.json()
+    Object.assign(this.data, data.response.blog)
+    return this
   }
 }

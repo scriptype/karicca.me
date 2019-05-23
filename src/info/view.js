@@ -1,4 +1,4 @@
-export function InfoTemplate(info) {
+export function InfoView(info) {
   return `
     <h1 class="info__title">
       <a href="/">${info.title}</a>
