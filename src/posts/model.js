@@ -23,13 +23,19 @@ export class PostModel {
           title: post.caption ? toDOM(post.caption).innerText : '',
           highResThumbnailUrl: post.photos[0].original_size.url
         }
+
+      case 'text':
+        return {
+          type: post.type,
+          permalink: post.post_url,
+          title: post.title
+        }
     }
   }
 
   async fetch() {
     this.page.loading = true
     const response = await tumblrClient.getPosts({
-      type: 'photo',
       tag: 'portfolio',
       limit: this.page.size,
       offset: this.page.current * this.page.size

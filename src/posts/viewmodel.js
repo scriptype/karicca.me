@@ -46,9 +46,9 @@ const renderNextPage = async () => {
 }
 
 const render = async () => {
-  const photoPosts = await model.fetch()
+  const posts = await model.fetch()
   const html = ContainerView(
-    photoPosts.map( post => PostModel.serialize(post) )
+    posts.map( post => PostModel.serialize(post) )
   )
   container.innerHTML = html
   window.addEventListener('scroll', onScroll)

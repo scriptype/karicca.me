@@ -13,6 +13,15 @@ export function PostView(post) {
           </figcaption>
         </figure>
       `
+
+    case 'text':
+      return `
+        <article class="post-item post-item--text">
+          <header>
+            <a class="post-item__overlay post-item__title" href="${post.permalink}">${post.title}</a>
+          </header>
+        </article>
+      `
   }
 }
 
