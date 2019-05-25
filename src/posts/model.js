@@ -18,10 +18,12 @@ export class PostModel {
     switch (post.type) {
       case 'photo':
         return {
+          id: post.id,
           type: post.type,
           permalink: post.post_url,
           title: post.caption ? toDOM(post.caption).innerText : '',
-          highResThumbnailUrl: post.photos[0].original_size.url
+          highResThumbnailUrl: post.photos[0].original_size.url,
+          tags: post.tags
         }
 
       case 'text':

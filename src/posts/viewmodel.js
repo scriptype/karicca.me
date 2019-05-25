@@ -1,8 +1,9 @@
 import { toDOM } from '../utils.js'
+import router from '../router'
 import { PostModel } from './model.js'
 import {
   ContainerView,
-  PostView,
+  PostThumbnailView,
   LoadingIndicatorView
 } from './view.js'
 
@@ -40,7 +41,7 @@ const renderNextPage = async () => {
   const nextPosts = await model.nextPage()
   loadingIndicator.remove()
   nextPosts.forEach(post => {
-    const html = PostView( PostModel.serialize(post) )
+    const html = PostThumbnailView( PostModel.serialize(post) )
     container.appendChild(toDOM(html))
   })
 }
@@ -53,6 +54,12 @@ const render = async () => {
   container.innerHTML = html
   window.addEventListener('scroll', onScroll)
   window.addEventListener('resize', onResize)
+  container.querySelectorAll('[data-linked-post]').forEach(anchor => {
+    anchor.addEventListener('click', event => {
+      event.preventDefault()
+      router.navigate(`post/${anchor.dataset.linkedPost}`, { trigger: true })
+    })
+  })
 }
 
 export default Object.freeze({
