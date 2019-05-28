@@ -21,26 +21,36 @@
 }
 
 .post-content {
-    width: 960px;
     min-height: 100%;
+    padding: 0 2em;
     margin: 0 auto 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
     font: normal 16px/1.5 "Libre Baskerville", serif;
 }
 
+@media (min-width: 960px) {
+    .post-content {
+        width: 960px;
+    }
+}
+
 .post-content--loading {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .post-content__title {
-    font-size: 64px;
+    font-size: 10vw;
     font-family: helvetica, sans-serif;
     font-weight: bold;
     line-height: 1.2;
     padding: 1em 0 .5em;
+}
+
+@media (min-width: 640px) {
+    .post-content__title {
+        font-size: 64px;
+    }
 }
 
 .post-content__back-button {
