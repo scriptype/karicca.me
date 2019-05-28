@@ -4,16 +4,17 @@ export default class Tumblr {
     this.blogName = options.blogName
   }
 
-  getBaseUrl(blogName, endpoint) {
-    return `https://api.tumblr.com/v2/blog/${blogName}.tumblr.com/${endpoint}`
+  getBaseUrl(endpoint) {
+    return `https://api.tumblr.com/v2/blog/${this.blogName}.tumblr.com/${endpoint}`
   }
 
-  getPosts({ type, limit, offset, blogName, tag }) {
-    const baseUrl = this.getBaseUrl(blogName || this.blogName, 'posts')
+  getPosts({ id, type, limit, offset, tag }) {
+    const baseUrl = this.getBaseUrl('posts')
     const params = [
       `limit=${limit}`,
       `api_key=${this.apiKey}`
     ]
+    if (id) params.push(`id=${id}`)
     if (type) params.push(`type=${type}`)
     if (tag) params.push(`tag=${tag}`)
     if (offset) params.push(`offset=${offset}`)
@@ -21,8 +22,12 @@ export default class Tumblr {
     return fetch(requestUrl)
   }
 
-  getInfo({ blogName } = {}) {
-    const baseUrl = this.getBaseUrl(blogName || this.blogName, 'info')
+  getPost({ id }) {
+    return this.getPosts({ id })
+  }
+
+  getInfo() {
+    const baseUrl = this.getBaseUrl('info')
     const params = [ `api_key=${this.apiKey}` ]
     const requestUrl = [ baseUrl, params.join('&') ].join('?')
     return fetch(requestUrl)

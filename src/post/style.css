@@ -1,0 +1,58 @@
+.post-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background: transparent;
+}
+
+.post-container.visible {
+    display: block;
+    animation: post-appear 1 forwards .5s;
+}
+
+@keyframes post-appear {
+    to {
+        background: rgba(255, 255, 255, .95);
+    }
+}
+
+.post-content {
+    width: 960px;
+    min-height: 100%;
+    margin: 0 auto 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    font: normal 16px/1.5 "Libre Baskerville", serif;
+}
+
+.post-content--loading {
+    align-items: center;
+}
+
+.post-content__title {
+    font-size: 64px;
+    font-family: helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+    padding: 1em 0 .5em;
+}
+
+.post-content__back-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.post-content img {
+    max-width: 100%;
+}

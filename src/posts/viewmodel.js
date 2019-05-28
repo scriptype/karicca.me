@@ -1,6 +1,6 @@
 import { toDOM } from '../utils.js'
 import router from '../router'
-import { PostCollection, PostModel } from './model.js'
+import { PostCollection } from './model.js'
 import {
   ContainerView,
   PostThumbnailView,
@@ -35,6 +35,11 @@ const onResize = (event) => {
   state.scrollHeight = document.documentElement.scrollHeight
 }
 
+const onClickPost = (event) => {
+  event.preventDefault()
+  router.navigate(`post/${event.target.dataset.linkedPost}`, { trigger: true })
+}
+
 const renderNextPage = async () => {
   const loadingIndicator = toDOM(LoadingIndicatorView())
   container.appendChild(loadingIndicator)
@@ -42,12 +47,16 @@ const renderNextPage = async () => {
   loadingIndicator.remove()
   nextPosts.forEach(post => {
     const html = PostThumbnailView( post.serialize() )
-    container.appendChild(toDOM(html))
+    const childNode = toDOM(html)
+    container.appendChild(childNode)
+    childNode
+      .querySelector('[data-linked-post]')
+      .addEventListener('click', onClickPost)
   })
 }
 
 const render = async () => {
-  const posts = await collection.fetch()
+  const posts = await collection.fetch({ lazy: true })
   const html = ContainerView(
     posts.map( post => post.serialize() )
   )
@@ -55,10 +64,7 @@ const render = async () => {
   window.addEventListener('scroll', onScroll)
   window.addEventListener('resize', onResize)
   container.querySelectorAll('[data-linked-post]').forEach(anchor => {
-    anchor.addEventListener('click', event => {
-      event.preventDefault()
-      router.navigate(`post/${anchor.dataset.linkedPost}`, { trigger: true })
-    })
+    anchor.addEventListener('click', onClickPost)
   })
 }
 

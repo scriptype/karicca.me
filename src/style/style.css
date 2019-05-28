@@ -1,7 +1,9 @@
 @import "reset.css";
+@import "reset-more.css";
 @import "fonts.css";
 @import "../info/style.css";
 @import "../posts/style.css";
+@import "../post/style.css";
 
 * {
     box-sizing: border-box;

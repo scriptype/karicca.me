@@ -16,7 +16,10 @@ export class InfoModel {
     }
   }
 
-  async fetch() {
+  async fetch({ lazy } = {}) {
+    if (lazy && Object.keys(this.data).length) {
+      return Promise.resolve(this)
+    }
     const response = await tumblrClient.getInfo()
     const data = await response.json()
     Object.assign(this.data, data.response.blog)
