@@ -17,6 +17,10 @@ const addEventListeners = () => {
   })
 }
 
+const onClose = (callback) => {
+  onCloseCallback = callback
+}
+
 const init = async (postId) => {
   container.classList.add('visible')
   container.innerHTML = LoadingPostView()
@@ -31,10 +35,6 @@ const init = async (postId) => {
 const destroy = () => {
   container.classList.remove('visible')
   document.body.classList.remove('no-scroll')
-}
-
-const onClose = (callback) => {
-  onCloseCallback = callback
 }
 
 export default Object.freeze({

@@ -24,7 +24,9 @@ function renderPostContent(post) {
   switch (post.type) {
     case 'photo':
       return `
-        <img src="${post.highResThumbnailUrl}" alt="${post.title}" />
+        <a href="${post.highResThumbnailUrl}" target="_blank">
+          <img src="${post.highResThumbnailUrl}" alt="${post.title}" />
+        </a>
       `
 
     case 'text':
