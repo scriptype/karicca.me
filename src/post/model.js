@@ -42,7 +42,7 @@ export class PostModel {
           type: this.data.type,
           permalink: this.data.post_url,
           title: this.data.title,
-          body: this.data.body.replace(/_(540|75|100|250|400|500).png/, '_1280.png')
+          body: this.data.body.replace(/_(540|75|100|250|400|500).png/gi, '_1280.png')
         }
     }
   }
