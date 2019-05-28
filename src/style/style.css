@@ -13,3 +13,8 @@
     max-width: 1000px;
     margin: 0 auto 150px;
 }
+
+body.no-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
