@@ -4,6 +4,18 @@ import router from '../router'
 
 const model = new PostModel()
 const container = document.getElementById('post-container')
+let onCloseCallback
+
+const addEventListeners = () => {
+  const closePostButton = document.getElementById('close-post-button')
+  closePostButton.addEventListener('click', () => {
+    if (onCloseCallback) {
+      onCloseCallback()
+    } else {
+      router.navigate('', { trigger: true })
+    }
+  })
+}
 
 const init = async (postId) => {
   container.classList.add('visible')
@@ -12,10 +24,7 @@ const init = async (postId) => {
   await model.fetch(postId)
 
   container.innerHTML = PostView( model.serialize() )
-  const closePostButton = document.getElementById('close-post-button')
-  closePostButton.addEventListener('click', () => {
-    router.navigate('', { trigger: true })
-  })
+  addEventListeners()
   document.body.classList.add('no-scroll')
 }
 
@@ -24,7 +33,12 @@ const destroy = () => {
   document.body.classList.remove('no-scroll')
 }
 
+const onClose = (callback) => {
+  onCloseCallback = callback
+}
+
 export default Object.freeze({
   init,
-  destroy
+  destroy,
+  onClose
 })

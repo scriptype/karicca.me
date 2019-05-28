@@ -24,4 +24,10 @@ const Router = Backbone.Router.extend({
 const router = new Router()
 Backbone.history.start()
 
+router.on('route:post', id => {
+  Post.onClose(() => {
+    window.history.back()
+  })
+})
+
 export default router
