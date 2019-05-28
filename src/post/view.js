@@ -1,7 +1,7 @@
 export function LoadingPostView() {
   return `
     <pre class="post-content post-content--loading">
-      Loading...
+      <span class="loading-indicator">Loading</span>
     </pre>
   `
 }

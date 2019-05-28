@@ -1,0 +1,47 @@
+.loading-indicator {
+    position: relative;
+    font-size: 5vw;
+    text-indent: -9999px;
+    animation: loading-indicator-wave infinite ease-out 1s .3s;
+}
+
+@media (min-width: 640px) {
+    .loading-indicator {
+        font-size: 32px;
+    }
+}
+
+.loading-indicator::before,
+.loading-indicator::after {
+    content: "";
+    position: absolute;
+    top: 0;
+}
+
+.loading-indicator,
+.loading-indicator::before,
+.loading-indicator::after {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 .125em #222;
+}
+
+.loading-indicator::before {
+    left: -1.5em;
+    animation: loading-indicator-wave-2 infinite ease-out 1s;
+}
+
+.loading-indicator::after {
+    right: -1.5em;
+    animation: loading-indicator-wave-2 infinite ease-out 1s .6s;
+}
+
+@keyframes loading-indicator-wave {
+    50% { transform: translateY(1em); }
+}
+
+@keyframes loading-indicator-wave-2 {
+    50% { transform: translateY(-.5em); }
+}

@@ -1,6 +1,7 @@
 @import "reset.css";
 @import "reset-more.css";
 @import "fonts.css";
+@import "components/loading-indicator.css";
 @import "../info/style.css";
 @import "../posts/style.css";
 @import "../post/style.css";
