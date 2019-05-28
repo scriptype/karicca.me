@@ -1,13 +1,13 @@
 import { toDOM } from '../utils.js'
 import router from '../router'
-import { PostModel } from './model.js'
+import { PostCollection, PostModel } from './model.js'
 import {
   ContainerView,
   PostThumbnailView,
   LoadingIndicatorView
 } from './view.js'
 
-const model = new PostModel({ pageSize: 10 })
+const collection = new PostCollection({ pageSize: 10 })
 const container = document.getElementById('posts-container')
 
 const state = {
@@ -20,7 +20,7 @@ let counter = 0
 const onScroll = (event) => {
   const scroll = document.documentElement.scrollTop || document.body.scrollTop
   const { scrollHeight, windowHeight } = state
-  const { page } = model
+  const { page } = collection
   const scrolledEnough = scroll >= scrollHeight - windowHeight * 2
   if (!page.loading && !page.reachedEnd && scrolledEnough) {
     renderNextPage().then(onResize)
@@ -38,18 +38,18 @@ const onResize = (event) => {
 const renderNextPage = async () => {
   const loadingIndicator = toDOM(LoadingIndicatorView())
   container.appendChild(loadingIndicator)
-  const nextPosts = await model.nextPage()
+  const nextPosts = await collection.nextPage()
   loadingIndicator.remove()
   nextPosts.forEach(post => {
-    const html = PostThumbnailView( PostModel.serialize(post) )
+    const html = PostThumbnailView( post.serialize() )
     container.appendChild(toDOM(html))
   })
 }
 
 const render = async () => {
-  const posts = await model.fetch()
+  const posts = await collection.fetch()
   const html = ContainerView(
-    posts.map( post => PostModel.serialize(post) )
+    posts.map( post => post.serialize() )
   )
   container.innerHTML = html
   window.addEventListener('scroll', onScroll)
