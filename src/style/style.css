@@ -1,0 +1,21 @@
+@import "reset.css";
+@import "reset-more.css";
+@import "fonts.css";
+@import "helpers.css";
+@import "components/loading-indicator.css";
+@import "../info/style.css";
+@import "../posts/style.css";
+@import "../post/style.css";
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto 150px;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
