@@ -10,7 +10,7 @@ export function PostView(post) {
   return `
     <div class="post-content">
       <button id="close-post-button" class="post-content__back-button" type="button">
-        Back to home ↩
+        <span class="close-icon">Close</span>
       </button>
 
       <h1 class="post-content__title">${post.title}</h1>

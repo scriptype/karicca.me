@@ -55,12 +55,16 @@
 
 .post-content__back-button {
     position: absolute;
-    top: 4px;
-    right: 4px;
-    font-family: helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+    top: 12px;
+    right: 12px;
+    font-size: 36px;
     color: #000;
+    cursor: pointer;
+}
+
+.post-content__back-button:hover,
+.post-content__back-button:focus {
+    color: #555;
 }
 
 .post-content img {

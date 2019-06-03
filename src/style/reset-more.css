@@ -5,4 +5,5 @@ button {
     background: none;
     font: inherit;
     color: inherit;
+    padding: 0;
 }
