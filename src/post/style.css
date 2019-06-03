@@ -9,6 +9,8 @@
     background: transparent;
 }
 
+.post-container.is-showing-larger-image {}
+
 .post-container.visible {
     display: block;
     animation: post-appear 1 forwards .5s;
@@ -25,6 +27,11 @@
     padding: 0 2em;
     margin: 0 auto 25vh;
     font: normal 16px/1.5 "Libre Baskerville", serif;
+}
+
+.post-container.is-showing-larger-image .post-content {
+    height: 0;
+    visibility: hidden;
 }
 
 @media (min-width: 960px) {
@@ -74,4 +81,17 @@
 
 .post-content img {
     max-width: 100%;
+}
+
+.full-image-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    cursor: pointer;
 }
