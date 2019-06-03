@@ -6,6 +6,14 @@ export function LoadingPostView() {
   `
 }
 
+export function FullImageView({ src, alt }) {
+  return `
+    <div class="full-image-view">
+      <img src="${src}" alt="${alt}" />
+    </div>
+  `
+}
+
 export function PostView(post) {
   return `
     <div class="post-content">
