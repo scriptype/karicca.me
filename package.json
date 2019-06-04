@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tasks/dev & tasks/server",
-    "build": "tasks/build"
+    "build": "tasks/build",
+    "deploy": "tasks/deploy"
   },
   "repository": {
     "type": "git",

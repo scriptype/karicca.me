@@ -1,0 +1,3 @@
+#!/bin/sh
+tasks/build
+tasks/clean
