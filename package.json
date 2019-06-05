@@ -1,0 +1,35 @@
+{
+  "name": "karicca.me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tasks/dev & tasks/server",
+    "build": "tasks/build",
+    "deploy": "tasks/deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scriptype/karicca.me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scriptype/karicca.me/issues"
+  },
+  "homepage": "https://github.com/scriptype/karicca.me#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "backbone": "^1.4.0",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "uglify-js": "^3.5.15",
+    "watchify": "^3.11.1"
+  }
+}
