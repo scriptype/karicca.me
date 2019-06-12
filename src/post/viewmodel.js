@@ -5,17 +5,15 @@ import router from '../router'
 
 const model = new PostModel()
 const container = document.getElementById('post-container')
+const IS_SHOWING_LARGER_IMAGE = 'is-showing-larger-image'
+let fullImageContainer
 let onCloseCallback
 
 const addEventListeners = () => {
   const closePostButton = document.getElementById('close-post-button')
-  closePostButton.addEventListener('click', () => {
-    if (onCloseCallback) {
-      onCloseCallback()
-    } else {
-      router.navigate('', { trigger: true })
-    }
-  })
+  closePostButton.addEventListener('click', closePost)
+
+  window.addEventListener('keyup', onKeyUp)
 
   const imagesQuery = 'a[href*="tumblr"] img[src*="tumblr"]'
   const images = container.querySelectorAll(imagesQuery)
@@ -29,13 +27,34 @@ const addEventListeners = () => {
 }
 
 const showFullImage = (image) => {
-  container.classList.add('is-showing-larger-image')
-  const fullImageContainer = toDOM(FullImageView(image))
+  container.classList.add(IS_SHOWING_LARGER_IMAGE)
+  fullImageContainer = toDOM(FullImageView(image))
   container.appendChild(fullImageContainer)
-  fullImageContainer.addEventListener('click', e => {
-    container.classList.remove('is-showing-larger-image')
-    fullImageContainer.remove()
-  })
+  fullImageContainer.addEventListener('click', closeLargerImage)
+}
+
+const closeLargerImage = () => {
+  container.classList.remove(IS_SHOWING_LARGER_IMAGE)
+  fullImageContainer.remove()
+}
+
+const closePost = () => {
+  if (onCloseCallback) {
+    onCloseCallback()
+  } else {
+    router.navigate('', { trigger: true })
+  }
+}
+
+const onKeyUp = (event) => {
+  // ESC
+  if (event.which === 27 || event.keyCode === 27) {
+    if (container.classList.contains(IS_SHOWING_LARGER_IMAGE)) {
+      closeLargerImage()
+    } else {
+      closePost()
+    }
+  }
 }
 
 const onClose = (callback) => {
@@ -56,6 +75,7 @@ const init = async (postId) => {
 const destroy = () => {
   container.classList.remove('visible')
   document.body.classList.remove('no-scroll')
+  window.removeEventListener('keyup', onKeyUp)
 }
 
 export default Object.freeze({
