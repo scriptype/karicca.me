@@ -47,3 +47,9 @@
     transform: translate( calc(var(--scrollTop) / 6), calc(var(--scrollTop) / 3) );
     background-position: -60px center;
 }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .parallax-layer:nth-child(5) {
+        background-position: -30px center;
+    }
+}
