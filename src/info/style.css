@@ -1,6 +1,11 @@
-.info-container {
-    padding: 10vw 0 20vw;
+.info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
 }
 
 .info__title {
@@ -17,14 +22,9 @@
     padding: 0 2em;
     margin: 10px auto 0;
     font: normal 4vw/1.3 "Libre Baskerville", serif;
-    color: #333;
 }
 
 @media (min-width: 480px) {
-    .info-container {
-        padding: 50px 0 100px;
-    }
-
     .info__title {
         font-size: 5em;
     }
