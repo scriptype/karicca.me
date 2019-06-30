@@ -1,18 +1,30 @@
 .posts-container {
+    padding: 5vw;
+}
+
+.posts {
     display: grid;
     grid-gap: 4.5vw;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: max-content;
     grid-auto-flow: dense;
-    padding: 5vw;
+    min-height: 100vh;
 }
 
 @media (min-width: 768px) {
     .posts-container {
-        grid-auto-rows: 300px 200px;
-        grid-gap: 50px;
         padding: 0;
     }
+
+    .posts {
+        grid-auto-rows: 300px 200px;
+        grid-gap: 50px;
+    }
+}
+
+.posts-title {
+    padding: 60px 0;
+    font: normal bold 2.5em/1 helvetica, sans-serif;
 }
 
 .post-item {

@@ -56,6 +56,7 @@ const renderNextPage = async () => {
 }
 
 const render = async () => {
+  container.innerHTML = ContainerView([])
   const posts = await collection.fetch({ lazy: true })
   const html = ContainerView(
     posts.map( post => post.serialize() )

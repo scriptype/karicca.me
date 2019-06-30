@@ -22,18 +22,47 @@
     color: inherit;
 }
 
-.info__description {
-    max-width: 540px;
-    font: normal 5vw/1.5 Montserrat, sans-serif;
-}
-
 @media (min-width: 480px) {
     .info__title {
         font-size: 2em;
     }
+}
 
+.info__description {
+    max-width: calc(100% - 10vh);
+    font: normal 5vw/1.5 Montserrat, sans-serif;
+}
+
+@media (min-width: 480px) {
     .info__description {
         font-size: 2.2em;
         line-height: 1.5;
+    }
+}
+
+@media (min-width: 600px) {
+    .info__description {
+        max-width: 540px;
+    }
+}
+
+.info__arrow {
+    position: absolute;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-indent: -9999px;
+    width: 32px;
+    height: 32px;
+    background: url(../assets/caret-down.svg) center center no-repeat;
+    background-size: 120%;
+    cursor: pointer;
+}
+
+@media (min-width: 480px) {
+    .info__arrow {
+        bottom: 10vh;
+        width: 56px;
+        height: 56px;
     }
 }
