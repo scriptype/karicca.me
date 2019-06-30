@@ -9,6 +9,7 @@ import {
 
 const collection = new PostCollection({ pageSize: 10 })
 const container = document.getElementById('posts-container')
+let initialized = false
 
 const state = {
   windowHeight: Infinity,
@@ -56,6 +57,9 @@ const renderNextPage = async () => {
 }
 
 const render = async () => {
+  if (initialized) {
+    return
+  }
   container.innerHTML = ContainerView([])
   const posts = await collection.fetch({ lazy: true })
   const html = ContainerView(
@@ -67,6 +71,7 @@ const render = async () => {
   container.querySelectorAll('[data-linked-post]').forEach(anchor => {
     anchor.addEventListener('click', onClickPost)
   })
+  initialized = true
 }
 
 export default Object.freeze({
