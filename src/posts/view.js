@@ -1,5 +1,12 @@
 export function ContainerView(posts) {
-  return posts.map(PostThumbnailView).join('\n\n')
+  return `
+    <h2 class="posts-title">
+      <a id="works" name="works">Latest Works</a>
+    </h2>
+    <div class="posts">
+      ${posts.map(PostThumbnailView).join('\n\n')}
+    </div>
+  `
 }
 
 export function PostThumbnailView(post) {

@@ -15,10 +15,14 @@ const render = (container, parallaxLayers, info) => {
   Parallax.init(parallaxId)
 }
 
-const init = async () => {
+const init = async ({ skipToWorks = false } = {}) => {
   const container = document.getElementById('info-container')
   await model.fetch({ lazy: true })
   render(container, config.parallaxLayers, model.serialize())
+  if (skipToWorks) {
+    const skipToWorksBtn = document.getElementById('skip-to-works-btn')
+    skipToWorksBtn.click()
+  }
 }
 
 export default Object.freeze({
