@@ -5,24 +5,31 @@ import config from '../config.js'
 
 const model = new InfoModel()
 
-const render = (container, parallaxLayers, info) => {
-  const parallaxId = 'info-parallax'
-  const parallaxSettings = {
-    layers: parallaxLayers,
-    id: parallaxId
-  }
-  container.innerHTML = InfoView({ parallaxSettings, info })
-  Parallax.init(parallaxId)
+const onClickSkipToWorks = (event) => {
+  event.preventDefault()
+  const worksTitle = document.getElementById('works')
+  const position = worksTitle.getBoundingClientRect().top
+  document.body.scrollTop = position
+  document.documentElement.scrollTop = position
 }
 
-const init = async ({ skipToWorks = false } = {}) => {
+const addEventListeners = () => {
+  const skipToWorksBtn = document.getElementById('skip-to-works-btn')
+  skipToWorksBtn.addEventListener('click', onClickSkipToWorks)
+}
+
+const init = async () => {
   const container = document.getElementById('info-container')
   await model.fetch({ lazy: true })
-  render(container, config.parallaxLayers, model.serialize())
-  if (skipToWorks) {
-    const skipToWorksBtn = document.getElementById('skip-to-works-btn')
-    skipToWorksBtn.click()
+  const parallaxId = 'info-parallax'
+  const parallaxSettings = {
+    layers: config.parallaxLayers,
+    id: parallaxId
   }
+  const info = model.serialize()
+  container.innerHTML = InfoView({ parallaxSettings, info })
+  Parallax.init(parallaxId)
+  addEventListeners()
 }
 
 export default Object.freeze({

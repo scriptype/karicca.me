@@ -6,7 +6,6 @@ import Post from './post/viewmodel.js'
 const Router = Backbone.Router.extend({
   routes: {
     '': 'home',
-    'works': 'works',
     'post/:id': 'post',
   },
 
@@ -14,13 +13,6 @@ const Router = Backbone.Router.extend({
     Post.destroy()
 
     Info.init()
-    Posts.init()
-  },
-
-  works() {
-    Post.destroy()
-
-    Info.init({ skipToWorks: true })
     Posts.init()
   },
 
