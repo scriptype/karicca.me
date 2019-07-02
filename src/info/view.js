@@ -3,9 +3,7 @@ import { NavigationView } from '../components/navigation/view.js'
 
 export function InfoView({ parallaxSettings, navigationLinks, info }) {
   return `
-    <nav class="info__navigation">
-      ${NavigationView(navigationLinks)}
-    </nav>
+    ${NavigationView(navigationLinks)}
     ${
       ParallaxView({
         layers: parallaxSettings.layers,
