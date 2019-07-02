@@ -5,6 +5,7 @@
 @import "components/loading-indicator.css";
 @import "components/close-icon.css";
 @import "../components/parallax/style.css";
+@import "../components/navigation/style.css";
 @import "../info/style.css";
 @import "../posts/style.css";
 @import "../post/style.css";

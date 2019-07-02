@@ -1,0 +1,10 @@
+.navigation {
+    display: flex;
+    font: normal 20px/1 Montserrat, sans-serif;
+    margin-right: -24px;
+}
+
+.navigation a {
+    color: inherit;
+    margin-right: 24px;
+}
