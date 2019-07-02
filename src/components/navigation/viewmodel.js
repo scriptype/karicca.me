@@ -22,5 +22,7 @@ const init = () => {
 }
 
 export default Object.freeze({
-  init
+  init,
+  openMenu,
+  closeMenu
 })

@@ -1,7 +1,7 @@
 export function ContainerView(posts) {
   return `
     <h2 class="posts-title">
-      <a id="works" name="works">
+      <a id="works-title" name="works-title">
         ${posts.length ? 'Latest Works' : LoadingIndicatorView()}
       </a>
     </h2>
