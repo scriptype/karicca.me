@@ -1,6 +1,7 @@
 export function NavigationView(items) {
   return `
     <nav class="navigation-container" id="navigation-container">
+      <a class="navigation__logo" href="/">Karicca</a>
       <button
         type="button"
         class="navigation__btn navigation__open-btn"
