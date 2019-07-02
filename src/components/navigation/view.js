@@ -16,9 +16,13 @@ export function NavigationView(items) {
         <span class="close-icon"></span>
       </button>
       <ul class="navigation">
-        ${items.map(({ text, href }) => `
+        ${items.map(({ text, href, id }) => `
           <li class="navigation__item">
-            <a href="${href}" target="_parent">${text}</a>
+            ${href ? (
+              `<a href="${href}" target="_parent">${text}</a>`
+            ) : (
+              `<a href="#" id="${id}">${text}</a>`
+            )}
           </li>
         `).join('')}
       </ul>

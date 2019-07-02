@@ -8,15 +8,19 @@ const model = new InfoModel()
 
 const onClickSkipToWorks = (event) => {
   event.preventDefault()
-  const worksTitle = document.getElementById('works')
+  Navigation.closeMenu()
+  const worksTitle = document.getElementById('works-title')
   const position = worksTitle.getBoundingClientRect().top
-  document.body.scrollTop = position
-  document.documentElement.scrollTop = position
+  document.body.scrollTop += position
+  document.documentElement.scrollTop += position
 }
 
 const addEventListeners = () => {
   const skipToWorksBtn = document.getElementById('skip-to-works-btn')
   skipToWorksBtn.addEventListener('click', onClickSkipToWorks)
+
+  const worksLink = document.getElementById('navigation-works-link')
+  worksLink.addEventListener('click', onClickSkipToWorks)
 
   const dom = document.documentElement
   window.addEventListener('scroll', () => {
@@ -42,6 +46,10 @@ const init = async () => {
   const info = model.serialize()
   const navigationLinks = [
     ...info.pageLinks,
+    {
+      text: 'Works',
+      id: 'navigation-works-link'
+    },
     ...config.socialMedia
   ]
   container.innerHTML = InfoView({ parallaxSettings, navigationLinks, info })
