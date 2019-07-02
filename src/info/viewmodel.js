@@ -1,4 +1,5 @@
 import Parallax from '../components/parallax/viewmodel.js'
+import Navigation from '../components/navigation/viewmodel.js'
 import { InfoView } from './view.js'
 import { InfoModel } from './model.js'
 import config from '../config.js'
@@ -45,6 +46,7 @@ const init = async () => {
   ]
   container.innerHTML = InfoView({ parallaxSettings, navigationLinks, info })
   Parallax.init(parallaxId)
+  Navigation.init()
   addEventListeners()
 }
 

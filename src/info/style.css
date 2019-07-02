@@ -70,12 +70,3 @@
         height: 56px;
     }
 }
-
-.info__navigation {
-    position: fixed;
-    top: 5vh;
-    right: 5vh;
-    z-index: 1;
-    color: var(--nav-color);
-    transition: color .5s;
-}
