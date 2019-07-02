@@ -16,6 +16,18 @@ const onClickSkipToWorks = (event) => {
 const addEventListeners = () => {
   const skipToWorksBtn = document.getElementById('skip-to-works-btn')
   skipToWorksBtn.addEventListener('click', onClickSkipToWorks)
+
+  const dom = document.documentElement
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(_ => {
+      const scrollTop = dom.scrollTop || document.body.scrollTop
+      if (scrollTop + (window.innerHeight / 15) >= window.innerHeight) {
+        dom.style.setProperty('--nav-color', 'black')
+      } else {
+        dom.style.setProperty('--nav-color', 'white')
+      }
+    })
+  })
 }
 
 const init = async () => {
@@ -27,7 +39,11 @@ const init = async () => {
     id: parallaxId
   }
   const info = model.serialize()
-  container.innerHTML = InfoView({ parallaxSettings, info })
+  const navigationLinks = [
+    ...info.pageLinks,
+    ...config.socialMedia
+  ]
+  container.innerHTML = InfoView({ parallaxSettings, navigationLinks, info })
   Parallax.init(parallaxId)
   addEventListeners()
 }
