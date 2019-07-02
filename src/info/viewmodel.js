@@ -45,7 +45,6 @@ const init = async () => {
   }
   const info = model.serialize()
   const navigationLinks = [
-    ...info.pageLinks,
     {
       text: 'Works',
       id: 'navigation-works-link'
