@@ -81,7 +81,7 @@
             height: 100%;
             padding: 4em 5vh 0;
             background: rgba(255, 255, 255, .95);
-            color: currentColor;
+            color: black;
         }
     }
 
@@ -92,7 +92,7 @@
 
     @keyframes navigation-logo-color {
         to {
-            color: currentColor;
+            color: black;
         }
     }
 
