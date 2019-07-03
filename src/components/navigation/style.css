@@ -18,6 +18,8 @@
     display: flex;
     font: normal 20px/1 Montserrat, sans-serif;
     margin-right: -24px;
+    color: currentColor;
+    transition: none;
 }
 
 .navigation__btn {
