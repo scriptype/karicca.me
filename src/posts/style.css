@@ -1,5 +1,6 @@
 .posts-container {
     padding: 5vw;
+    background: #fff;
 }
 
 .posts {
@@ -11,20 +12,25 @@
     min-height: 100vh;
 }
 
+.posts-title {
+    padding-bottom: 10vw;
+    padding-top: 5vw;
+}
+
 @media (min-width: 768px) {
     .posts-container {
-        padding: 0;
+        padding: 60px;
     }
 
     .posts {
         grid-auto-rows: 300px 200px;
         grid-gap: 50px;
     }
-}
 
-.posts-title {
-    padding: 60px 0;
-    font: normal bold 2.5em/1 helvetica, sans-serif;
+    .posts-title {
+        padding: 0;
+        padding-bottom: 60px;
+    }
 }
 
 .post-item {
@@ -77,7 +83,6 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    font: normal bold 8vw helvetica, sans-serif;
     color: #000;
     text-decoration: none;
     text-align: center;
@@ -90,18 +95,6 @@
 .post-item--text:hover .post-item__title,
 .post-item--text:focus-within .post-item__title {
     color: #12e;
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
-    .post-item__title {
-        font-size: 6vw;
-    }
-}
-
-@media (min-width: 768px) {
-    .post-item__title {
-        font-size: 3em;
-    }
 }
 
 .post-item__media {

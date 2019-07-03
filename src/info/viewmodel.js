@@ -22,11 +22,13 @@ const addEventListeners = () => {
   const worksLink = document.getElementById('navigation-works-link')
   worksLink.addEventListener('click', onClickSkipToWorks)
 
+  const parallaxHeight = Parallax.getHeight()
+
   const dom = document.documentElement
   window.addEventListener('scroll', () => {
     requestAnimationFrame(_ => {
       const scrollTop = dom.scrollTop || document.body.scrollTop
-      if (scrollTop + (window.innerHeight / 15) >= window.innerHeight) {
+      if (scrollTop + (window.innerHeight / 15) >= parallaxHeight) {
         dom.style.setProperty('--nav-color', 'black')
       } else {
         dom.style.setProperty('--nav-color', 'white')
