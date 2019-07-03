@@ -1,6 +1,6 @@
 export function ContainerView(posts) {
   return `
-    <h2 class="posts-title">
+    <h2 class="heading-1 posts-title">
       <a id="works-title" name="works-title">
         ${posts.length ? 'Latest Works' : LoadingIndicatorView()}
       </a>
@@ -21,7 +21,7 @@ export function PostThumbnailView(post) {
           <img class="post-item__media" src="${post.highResThumbnailUrl}" alt="${post.title}" />
           <figcaption>
             <a
-              class="post-item__overlay post-item__title"
+              class="heading-1 post-item__overlay post-item__title"
               href="${post.permalink}"
               ${linkAttr}
             >
@@ -35,7 +35,12 @@ export function PostThumbnailView(post) {
       return `
         <article class="post-item post-item--text">
           <header>
-            <a class="post-item__overlay post-item__title" href="${post.permalink}">${post.title}</a>
+            <a
+              class="heading-1 post-item__overlay post-item__title"
+              href="${post.permalink}"
+            >
+              ${post.title}
+            </a>
           </header>
         </article>
       `

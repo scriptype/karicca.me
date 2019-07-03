@@ -4,6 +4,7 @@
 @import "helpers.css";
 @import "components/loading-indicator.css";
 @import "components/close-icon.css";
+@import "components/heading.css";
 @import "../components/parallax/style.css";
 @import "../components/navigation/style.css";
 @import "../info/style.css";
@@ -18,11 +19,15 @@ html {
     scroll-behavior: smooth;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto 150px;
+body {
+    background: #f6f2ee;
 }
 
 body.no-scroll {
     overflow: hidden;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
 }

@@ -1,12 +1,18 @@
 .navigation-container {
     color: var(--nav-color);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 1440px;
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
 .navigation {
-    position: fixed;
+    position: absolute;
     top: 5vh;
     right: 5vh;
-    z-index: 1;
     transition: color .5s;
     display: flex;
     font: normal 20px/1 Montserrat, sans-serif;

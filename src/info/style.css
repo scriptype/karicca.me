@@ -2,6 +2,12 @@
     --nav-color: white;
 }
 
+.info-container {
+    max-width: 1440px;
+    max-height: 900px;
+    margin: 0 auto;
+}
+
 .info {
     position: relative;
     height: 100%;
