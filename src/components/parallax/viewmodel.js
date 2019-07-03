@@ -8,8 +8,21 @@ const addEventListeners = () => {
   })
 }
 
+const settings = {
+  id: ''
+}
+
+const getContainer = () => {
+  return document.getElementById(settings.id)
+}
+
+const getHeight = () => {
+  return getContainer().getBoundingClientRect().height
+}
+
 const init = (id = 'parallax-container') => {
-  const container = document.getElementById(id)
+  settings.id = id
+  const container = getContainer()
   container.style.cssText += `
     height: ${window.innerHeight}px;
   `
@@ -17,5 +30,7 @@ const init = (id = 'parallax-container') => {
 }
 
 export default Object.freeze({
-  init
+  init,
+  getHeight,
+  getContainer
 })
