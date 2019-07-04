@@ -1,5 +1,12 @@
 :root {
     --nav-color: white;
+    --top-spacing: 40px;
+}
+
+@media (max-width: 720px) {
+    :root {
+        --top-spacing: 36px;
+    }
 }
 
 .info-container {
@@ -22,8 +29,10 @@
 
 .info__title {
     position: absolute;
-    top: 5vh;
-    left: 5vh;
+    top: 40px;
+    top: var(--top-spacing);
+    left: 40px;
+    left: var(--top-spacing);
     font: normal bold 4.5vw/1 Montserrat, sans-serif;
 }
 

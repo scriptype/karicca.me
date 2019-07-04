@@ -1,4 +1,5 @@
 .navigation-container {
+    color: #000;
     color: var(--nav-color);
     position: fixed;
     top: 0;
@@ -12,8 +13,10 @@
 
 .navigation {
     position: absolute;
-    top: 5vh;
-    right: 5vh;
+    top: 40px;
+    top: var(--top-spacing);
+    right: 40px;
+    right: var(--top-spacing);
     transition: color .5s;
     display: flex;
     font: normal 20px/1 Montserrat, sans-serif;
@@ -25,8 +28,10 @@
 .navigation__btn {
     display: none;
     position: fixed;
-    top: 5vh;
-    right: 5vh;
+    top: 40px;
+    top: var(--top-spacing);
+    right: 40px;
+    right: var(--top-spacing);
     z-index: 2;
     width: 56px;
     height: 56px;
@@ -37,8 +42,10 @@
 .navigation__logo {
     display: none;
     position: fixed;
-    top: 5vh;
-    left: 5vh;
+    top: 40px;
+    top: var(--top-spacing);
+    left: 40px;
+    left: var(--top-spacing);
     font: normal bold 4.5vw/1 Montserrat, sans-serif;
     text-decoration: none;
     color: inherit;
@@ -80,7 +87,8 @@
         left: 0;
         width: 100%;
         height: 0;
-        padding: 0 5vh;
+        padding: 0 40px;
+        padding: 0 var(--top-spacing);
         background: transparent;
         color: transparent;
         animation: navigation-appear-in .5s forwards 1;
@@ -89,7 +97,8 @@
     @keyframes navigation-appear-in {
         to {
             height: 100%;
-            padding: 4em 5vh 0;
+            padding: 4em 40px 0;
+            padding: 4em var(--top-spacing) 0;
             background: rgba(255, 255, 255, .95);
             color: black;
         }
