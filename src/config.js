@@ -12,12 +12,12 @@ export default {
   ],
   socialMedia: [
     {
-      text: 'Instagram',
-      href: 'https://www.instagram.com/karicca'
+      text: 'Dribbble',
+      href: 'https://dribbble.com/karicca'
     },
     {
-      text: 'Behance',
-      href: 'https://www.behance.net/karicca'
+      text: 'Instagram',
+      href: 'https://www.instagram.com/karicca'
     },
     {
       text: 'Twitter',
