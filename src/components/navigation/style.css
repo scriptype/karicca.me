@@ -19,7 +19,7 @@
     right: var(--top-spacing);
     transition: color .5s;
     display: flex;
-    font: normal 20px/1 Montserrat, sans-serif;
+    font: normal 20px/1.7 Montserrat, sans-serif;
     margin-right: -24px;
     color: currentColor;
     transition: none;
