@@ -17,13 +17,9 @@ export function NavigationView(items) {
         <span class="navigation__icon close-icon"></span>
       </button>
       <ul class="navigation">
-        ${items.map(({ text, href, id }) => `
+        ${items.map(({ text, href = "#", id = '' }) => `
           <li class="navigation__item">
-            ${href ? (
-              `<a href="${href}" target="_parent">${text}</a>`
-            ) : (
-              `<a href="#" id="${id}">${text}</a>`
-            )}
+            <a href="${href}" target="_parent" id="${id}">${text}</a>
           </li>
         `).join('')}
       </ul>

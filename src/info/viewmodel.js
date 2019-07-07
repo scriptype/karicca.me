@@ -48,6 +48,10 @@ const init = async () => {
   const info = model.serialize()
   const navigationLinks = [
     {
+      text: 'About',
+      href: '#post/186068733177'
+    },
+    {
       text: 'Works',
       id: 'navigation-works-link'
     },

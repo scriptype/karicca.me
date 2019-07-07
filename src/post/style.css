@@ -27,7 +27,7 @@
     min-height: 100%;
     padding: 0 2em;
     margin: 0 auto 25vh;
-    font: normal 16px/1.5 "Libre Baskerville", serif;
+    font: normal 20px/1.6 helvetica, sans-serif;
 }
 
 .post-container.is-showing-larger-image .post-content {
