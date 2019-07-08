@@ -22,7 +22,8 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "backbone": "^1.4.0",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
