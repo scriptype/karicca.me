@@ -49,7 +49,7 @@ const init = async () => {
   const navigationLinks = [
     {
       text: 'About',
-      href: '#post/186068733177'
+      href: '#about'
     },
     {
       text: 'Works',
