@@ -8,7 +8,7 @@ export function LoadingPostView() {
 
 export function FullImageView({ src, alt }) {
   return `
-    <div class="full-image-view">
+    <div class="full-image-view" id="full-image-view">
       <img src="${src}" alt="${alt}" />
     </div>
   `
@@ -16,7 +16,7 @@ export function FullImageView({ src, alt }) {
 
 export function PostView(post) {
   return `
-    <div class="post-content">
+    <div class="post-content" id="post-content">
       <button id="close-post-button" class="post-content__back-button" type="button">
         <span class="close-icon">Close</span>
       </button>

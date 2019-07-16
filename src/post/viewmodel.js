@@ -15,6 +15,8 @@ const addEventListeners = () => {
 
   window.addEventListener('keyup', onKeyUp)
 
+  container.addEventListener('click', onClickAnyWhere, true)
+
   const imagesQuery = 'a[href*="tumblr"] img[src*="tumblr"]'
   const images = container.querySelectorAll(imagesQuery)
   images.forEach(image => {
@@ -36,6 +38,17 @@ const showFullImage = (image) => {
 const closeLargerImage = () => {
   container.classList.remove(IS_SHOWING_LARGER_IMAGE)
   fullImageContainer.remove()
+}
+
+const onClickAnyWhere = ({ target }) => {
+  const content = document.getElementById('post-content')
+  const fullImageView = document.getElementById('full-image-view')
+  const clickedInContent = content.contains(target)
+  const clickedInFullImage = fullImageView && fullImageView.contains(target)
+  if (clickedInContent || clickedInFullImage) {
+    return
+  }
+  closePost()
 }
 
 const closePost = () => {
@@ -76,6 +89,7 @@ const destroy = () => {
   container.classList.remove('visible')
   document.body.classList.remove('no-scroll')
   window.removeEventListener('keyup', onKeyUp)
+  container.removeEventListener('click', onClickAnyWhere, true)
 }
 
 export default Object.freeze({
