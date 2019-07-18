@@ -1,3 +1,0 @@
-#!/bin/sh
-find src | grep -v style | grep -v src$ | xargs rm -rf
-rm -rf tasks package* readme.md

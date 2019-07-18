@@ -1,5 +1,14 @@
 #!/bin/sh
 mkdir -p dist
+
+HTML_INPUT='index.hbs' \
+HTML_OUTPUT='index.html' \
+CSS_PATH='src/style/style.css' \
+JS_PATH='dist/app.js' \
+  node tasks/helpers/handlebars.js
+
+tasks/server .
+
 watchify \
   --delay=100 \
   --verbose \

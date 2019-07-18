@@ -1,2 +1,2 @@
 #!/bin/sh
-http-server .
+http-server $1

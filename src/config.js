@@ -7,11 +7,11 @@ export default {
   aboutMePostId: '186068733177',
 
   parallaxLayers: [
-    '/src/assets/parallax/layer1.jpg',
-    '/src/assets/parallax/layer2.png',
-    '/src/assets/parallax/layer3.png',
-    '/src/assets/parallax/layer4.png',
-    '/src/assets/parallax/layer5.png'
+    'assets/parallax/layer1.jpg',
+    'assets/parallax/layer2.png',
+    'assets/parallax/layer3.png',
+    'assets/parallax/layer4.png',
+    'assets/parallax/layer5.png'
   ],
 
   socialMedia: [

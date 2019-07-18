@@ -1,5 +1,7 @@
 #!/bin/sh
+rm -rf dist
 mkdir -p dist
+
 browserify \
   --delay=100 \
   --verbose \
@@ -11,4 +13,14 @@ browserify \
 uglifyjs dist/app.js \
   --mangle \
   --compress \
-  --output dist/app.js
+  --output dist/app.min.js
+
+postcss src/style/style.css > dist/style.min.css
+
+cp -R assets dist
+
+HTML_INPUT='index.hbs' \
+HTML_OUTPUT='dist/index.html' \
+CSS_PATH='style.min.css' \
+JS_PATH='app.min.js' \
+  node tasks/helpers/handlebars.js

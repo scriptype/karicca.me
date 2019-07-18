@@ -73,7 +73,7 @@
     text-indent: -9999px;
     width: 32px;
     height: 32px;
-    background: url(../assets/icons/caret-down.svg) center center no-repeat;
+    background: url(../../assets/icons/caret-down.svg) center center no-repeat;
     background-size: 120%;
     cursor: pointer;
 }
