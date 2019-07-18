@@ -19,6 +19,8 @@ postcss src/style/style.css > dist/style.min.css
 
 cp -R assets dist
 
+cp CNAME dist
+
 HTML_INPUT='index.hbs' \
 HTML_OUTPUT='dist/index.html' \
 CSS_PATH='style.min.css' \
