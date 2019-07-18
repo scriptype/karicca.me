@@ -1,1 +1,0 @@
-# Karicca.me
