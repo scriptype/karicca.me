@@ -7,12 +7,4 @@ CSS_PATH='src/style/style.css' \
 JS_PATH='dist/app.js' \
   node tasks/helpers/handlebars.js
 
-tasks/server .
-
-watchify \
-  --delay=100 \
-  --verbose \
-  --transform [ babelify ] \
-  --outfile dist/app.js \
-  --debug \
-  src/app.js
+tasks/helpers/server & tasks/helpers/watchify

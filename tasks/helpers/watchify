@@ -1,0 +1,8 @@
+#!/bin/sh
+watchify \
+  --delay=100 \
+  --verbose \
+  --transform [ babelify ] \
+  --outfile dist/app.js \
+  --debug \
+  src/app.js
