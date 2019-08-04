@@ -5,7 +5,16 @@ import { toDOM } from '../utils.js'
 const tumblrClient = new Tumblr(config.tumblr)
 
 export class PostModel {
-  constructor(data = {}) {
+  constructor(data = {
+    id: '',
+    type: '',
+    tags: [],
+    title: '',
+    caption: '',
+    post_url: '',
+    body: '',
+    photos: []
+  }) {
     this.data = data
   }
 
