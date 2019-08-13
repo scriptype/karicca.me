@@ -103,18 +103,27 @@
     object-fit: contain;
 }
 
-.loading-container {
-    text-align: center;
-}
+.after-posts-block {}
 
 @media (min-width: 480px) {
-    .loading-container {
+    .after-posts-block {
         grid-column: span 2;
     }
 }
 
 @media (min-width: 850px) {
-    .loading-container {
+    .after-posts-block {
         grid-column: span 3;
     }
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.reached-end-container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }

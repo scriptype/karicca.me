@@ -49,8 +49,16 @@ export function PostThumbnailView(post) {
 
 export function LoadingIndicatorView() {
   return `
-    <div class="loading-container">
+    <div class="after-posts-block loading-container">
       <span class="loading-indicator">Loading</span>
+    </div>
+  `
+}
+
+export function ReachedEndView() {
+  return `
+    <div class="after-posts-block reached-end-container">
+      <a href="#" class="reached-end">Back to top</a>
     </div>
   `
 }

@@ -4,7 +4,8 @@ import { PostCollection } from './model.js'
 import {
   ContainerView,
   PostThumbnailView,
-  LoadingIndicatorView
+  LoadingIndicatorView,
+  ReachedEndView
 } from './view.js'
 
 const collection = new PostCollection({ pageSize: 10 })
@@ -55,6 +56,9 @@ const renderNextPage = async () => {
       .querySelector('[data-linked-post]')
       .addEventListener('click', onClickPost)
   })
+  if (collection.page.reachedEnd) {
+    container.appendChild(toDOM(ReachedEndView()))
+  }
 }
 
 const render = async () => {

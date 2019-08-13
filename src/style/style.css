@@ -3,6 +3,7 @@
 @import "fonts.css";
 @import "helpers.css";
 @import "components/loading-indicator.css";
+@import "components/reached-end.css";
 @import "components/close-icon.css";
 @import "components/heading.css";
 @import "../components/parallax/style.css";
