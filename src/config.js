@@ -24,8 +24,8 @@ export default {
       href: 'https://www.instagram.com/karicca'
     },
     {
-      text: 'Twitter',
-      href: 'https://twitter.com/jellymedyza'
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/irina-valeeva'
     }
   ]
 }
