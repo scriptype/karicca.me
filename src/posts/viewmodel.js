@@ -46,10 +46,11 @@ const renderNextPage = async () => {
   container.appendChild(loadingIndicator)
   const nextPosts = await collection.nextPage()
   loadingIndicator.remove()
+  const postsList = container.querySelector('#posts')
   nextPosts.forEach(post => {
     const html = PostThumbnailView( post.serialize() )
     const childNode = toDOM(html)
-    container.appendChild(childNode)
+    postsList.appendChild(childNode)
     childNode
       .querySelector('[data-linked-post]')
       .addEventListener('click', onClickPost)

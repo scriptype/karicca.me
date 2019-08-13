@@ -5,7 +5,7 @@ export function ContainerView(posts) {
         ${posts.length ? 'Latest Works' : LoadingIndicatorView()}
       </a>
     </h2>
-    <div class="posts">
+    <div class="posts" id="posts">
       ${posts.map(PostThumbnailView).join('\n\n')}
     </div>
   `
