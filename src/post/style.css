@@ -27,7 +27,7 @@
     min-height: 100%;
     padding: 0 2em;
     margin: 0 auto 25vh;
-    font: normal 20px/1.6 helvetica, sans-serif;
+    font: normal 16px/1.5 helvetica, sans-serif;
 }
 
 .post-container.is-showing-larger-image .post-content {
@@ -80,12 +80,22 @@
     }
 }
 
+/*
+ * Content styling
+ * */
+
+.post-content i,
+.post-content em {
+    font-style: italic;
+}
+
 .post-content img {
     max-width: 100%;
 }
 
 .post-content p {
-    margin-bottom: 1em;
+    margin-top: .5em;
+    margin-bottom: 2em;
     max-width: 640px;
 }
 
