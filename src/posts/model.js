@@ -26,7 +26,10 @@ export class PostCollection {
       offset: this.page.current * this.page.size
     })
     const data = await response.json()
-    const posts = data.response.posts.map(post => new PostModel(post))
+    const baseIndex = this.page.current * this.page.size
+    const posts = data.response.posts.map((post, index) =>
+      new PostModel(post, baseIndex + index)
+    )
     if (posts.length < this.page.size) {
       this.page.reachedEnd = true
     }

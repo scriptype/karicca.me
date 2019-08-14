@@ -18,7 +18,14 @@ export function PostThumbnailView(post) {
       const linkAttr = `data-linked-post="${linkedId}"`
       return `
         <figure class="post-item post-item--photo">
-          <img class="post-item__media" src="${post.highResThumbnailUrl}" alt="${post.title}" />
+          <picture>
+            <source media="(max-width: 250px)" srcset="${post.getThumbnail(250)}">
+            <source media="(max-width: 400px)" srcset="${post.getThumbnail(400)}">
+            <source media="(max-width: 500px)" srcset="${post.getThumbnail(500)}">
+            <source media="(max-width: 540px)" srcset="${post.getThumbnail(540)}">
+            <source media="(max-width: 849px)" srcset="${post.getThumbnail(640)}">
+            <img src="${post.fallbackThumbnail}" class="post-item__media" alt="${post.title}" />
+          </picture>
           <figcaption>
             <a
               class="heading-1 post-item__overlay post-item__title"
