@@ -32,3 +32,12 @@ HTML_OUTPUT='dist/index.html' \
 CSS_PATH='style.min.css' \
 JS_PATH='app.min.js' \
   node tasks/helpers/handlebars.js
+
+html-minifier \
+  --collapse-whitespace \
+  --remove-attribute-quotes \
+  --remove-comments \
+  --remove-empty-attributes \
+  --remove-redundant-attributes \
+  --output dist/index.html \
+  dist/index.html
