@@ -21,6 +21,10 @@ postcss src/style/style.css > dist/style.min.css
 
 cp -R assets dist
 
+imagemin dist/assets/parallax/* \
+  --out-dir=dist/assets/parallax \
+  --plugin=pngquant
+
 cp CNAME dist
 
 HTML_INPUT='index.hbs' \
