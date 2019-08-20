@@ -24,7 +24,7 @@ export function PostThumbnailView(post) {
             <source media="(max-width: 500px)" srcset="${post.getThumbnail(500)}">
             <source media="(max-width: 540px)" srcset="${post.getThumbnail(540)}">
             <source media="(max-width: 849px)" srcset="${post.getThumbnail(640)}">
-            <img src="${post.fallbackThumbnail}" class="post-item__media" alt="${post.title}" />
+            <img src="${post.fallbackThumbnail}" alt="${post.title}" loading="lazy" class="post-item__media" />
           </picture>
           <figcaption>
             <a
