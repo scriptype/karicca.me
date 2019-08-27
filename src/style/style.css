@@ -20,9 +20,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background: #f6f2ee;
-}
+body {}
 
 body.no-scroll {
     overflow: hidden;
